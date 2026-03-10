@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeID - Digital Identity</title>
+    <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #333;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        width: 380px;
+        text-align: center;
+    }
+
+    h2 {
+        color: #4a148c;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    .upload-box {
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 13px;
+    }
+
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        border: 2px dashed #ddd;
+        border-radius: 10px;
+        background: #fafafa;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    input[type="file"]:hover {
+        border-color: #764ba2;
+    }
+
+    button {
+        background: #764ba2;
+        color: white;
+        border: none;
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s ease;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #5a368a;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+    </head>
+<body>
+
+    <div class="container">
+        <h2>🛡️ SafeID Verification</h2>
+        <p>upload your photo to check Verification</p>
+
+        <form action="/verify" method="post" enctype="multipart/form-data">
+            
+            <div class="upload-box">
+                <label>upload your id card (Aadhaar/PAN):</label>
+                <input type="file" name="id_image" required>
+            </div>
+
+            <div class="upload-box">
+                <label>upload your camera live selfie</label>
+                <input type="file" name="selfie_image" required>
+            </div>
+
+            <button type="submit">verify</button>
+
+        </form>
+
+        <div id="result">
+            </div>
+    </div>
+
+</body>
+</html>

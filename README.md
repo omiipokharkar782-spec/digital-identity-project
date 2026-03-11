@@ -1,4 +1,3 @@
-"""
 Project Title
 SafeID – AI-Powered Privacy-First Identity Verification System
 
